@@ -26,19 +26,23 @@ li {
     background-color:rgb(231, 231, 231) ;
     height:100%;
 }
-.leftColumn {border-radius:15px ;
-    padding:20px"
+.leftColumn {
+    border-radius:15px ;
+    padding:20px;
 }
 .Order{
-    padding: 20px; margin-bottom: 20px;
+    padding: 20px;
+     margin-bottom: 20px;
 }
-.orderImg{max-height :170px;max-width:150px;border-radius:280px
-    
+.orderImg{
+    max-height :170px;
+    max-width:150px;
+    border-radius:280px;
 }
 .inputControls{
     vertical-align:bottom ;
     margin-top: 15px;
-     text-align: end"
+     text-align: end;
 }
 .rightColumn{border-radius:15px ;padding:15px
 }
