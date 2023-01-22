@@ -1,6 +1,6 @@
-import * as functions from "firebase-functions";
-import * as admin from "firebase-admin";
-admin.initializeApp();
+// import * as functions from "firebase-functions";
+// import * as admin from "firebase-admin";
+// admin.initializeApp();
 
 //promote user to be admin
 /* exports.addAdminRole =  functions.https.onCall((data,context)=>{
