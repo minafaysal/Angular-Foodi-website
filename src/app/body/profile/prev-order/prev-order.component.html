@@ -1,0 +1,45 @@
+<div class="order-container ">
+    <!-- when orders empty -->
+    <div *ngIf="prev_orders.length==0" class="fw-bold  text-secondary align-items-center text-center">
+        <img src="../../../../assets/images/Order.ico" alt="img"><br>
+
+        <p class="fs-3">No previous orders </p>
+        <p class="fs-6">Please orders to view your order history</p>
+
+    </div>
+
+    <!-- when have orders -->
+    <div *ngIf="prev_orders.length!=0">
+        <div class="row the-row" *ngFor="let item of prev_orders">
+            <div class="col-lg-3 d-none d-lg-inline-block img-col">
+                <div>
+                    <img src={{item.img}} alt="img">
+                </div>
+            </div>
+            <div class="col-6 title-col ">
+                <div>
+                    <p class="title ">{{item.title}}</p>
+                    <p class="subtitle text-secondary d-none d-md-inline-block">{{item.subTitle}}</p>
+                </div>
+                <div class="d-flex align-items-end">
+                    <P class="fw-bold count">count: {{item.count}} </P>
+                </div>
+            </div>
+            <div class="col-3 tail-col d-none d-sm-inline-block justify-content-around  ">
+                <div>
+                    <p [ngClass]="item.state=='delivered'?'text-success': item.state=='cancel'? 'text-danger': 'text-secondary'"
+                        class="fw-bold">{{item.state}}</p>
+                    <p class="text-secondary">date : {{item.date}}</p>
+                </div>
+                <div class="d-flex align-items-end">
+                    <P class="fw-bold">total : {{item.totalPrice}} L.E </P>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+  
+</div>

@@ -1,0 +1,178 @@
+
+/* Nav bar */
+
+.activeNav{
+  position: fixed; 
+}
+
+.topNav{
+  position: absolute;
+}
+
+nav{
+position: absolute;
+border-block-end: 1px solid var(--champagne-pink_20);
+
+}
+
+.nav-item{
+  color: var(--black);
+  /* background-color: var(--white); */
+}
+.nav-link{
+  color: var(--black);
+  /* background-color: var(--white); */
+}
+
+/* yousef */
+/* login & signUp buttons */
+
+.dropdown .dropdown-menu li
+{
+  cursor: pointer;
+}
+
+/* .navbar-nav{
+  background-color: var(--white);
+  width: 100%;
+} */
+/* 
+@media (max-width: 991px)
+{
+  .nav-link{
+    color: var(--black);
+    background-color: var(--white);
+  }
+} */
+
+.brand,.brandDot{ 
+font-weight: bold;
+display: inline;
+}
+
+.brandDot{
+  color:  var(--tangerine);
+}
+
+
+
+.hero {
+  background-image: url('../../assets/images/hero-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-block: 145px 60px;
+  text-align: center;
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  z-index: 1;
+  min-height: 660px;
+  display: grid;
+  align-items: center;
+}
+
+.hero-title {
+  color: var(--champagne-pink);
+  max-width: 22ch;
+  font-size: 70px;
+  font-weight: bold;
+  margin-inline: auto;
+}
+.hero-subtitle {
+  color: var(--dark-orange);
+  font-family: var(--ff-shadows-into-light);
+  font-size: var(--fs-2);
+  letter-spacing: 1px;
+  margin-block-end: 25px;
+
+}
+
+.hero-text {
+  color: var(--desert-sand);
+  margin-block: 15px 30px;
+  max-width: 44ch;
+  font-size: 20px;
+  margin-inline: auto;
+}
+
+.hero .btn { 
+  background-color: var(--deep-saffron);
+  color: var(--white);
+  width: 150px;
+  height: 45px;
+  margin-inline: auto;
+  font-weight: bold;
+  border-radius: 0;
+
+}
+
+.hero .btn:is(:hover, :focus) {
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: bold;
+}
+
+
+.hero-content > :is(*, .btn) { 
+  margin-inline: 0;
+
+ }
+
+
+/* .hero-img {
+   position: absolute;
+   bottom: 0; 
+} */ 
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/images/hero-bg-shape.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right bottom;
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+.hero-subtitle { --fs-3: 3.2rem; }
+
+.hero-title {
+  --fs-1: 7rem;
+  
+  letter-spacing: -2.5px;
+}
+/* 
+.hero-img-bg { transform: scale(1.4) translate(20px, -20px); } */
+
+/* .hero { min-height: 770px; } */
+
+
+/* yousef edit */
+/* profile dropdown list */
+
+.profileDDL a i
+{
+  font-size: 25px;
+}
+
+.profileDDL ul.dropdown-menu
+{
+  margin-top: 17px;
+}
+.dropdownimg{
+  width: 40px;
+  height: 35px;
+  border-radius: 25px;
+}
+
+
+.td {
+  text-align: center;
+}

@@ -1,0 +1,74 @@
+.main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* sign in */
+.main form .password
+{
+    position: relative;
+}
+
+.main form .password i
+{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right: 12px;
+    cursor: pointer;
+    color: #8b8686;
+}
+
+.main form .form-check label.forgetPass
+{
+    text-align: right;
+    font-weight: bold;
+}
+
+.main form .submitBtn
+{
+    width: 70%;
+    font-weight: bold;
+    color: white;
+    font-size: 17px;
+    padding: 8px;
+    background-color: var(--tangerine);
+    border: 0;
+    text-shadow: 2px 2px 1px #665757;
+    margin: 25px 0 30px;
+    transition: all .25s ease-in-out;
+}
+
+.main form .submitBtn:hover
+{
+    background-color:hsl(31deg 85% 42%);
+}
+
+.main .FGbttons
+{
+    margin: 10px 0;
+}
+
+.main .FGbttons button
+{
+    border: 1px solid #d1c6c6;
+    transition: all .25s ease-in-out;
+}
+.main .FGbttons button:hover
+{
+    border-color: #8b8686;
+}
+
+.main .FGbttons button:last-of-type
+{
+    margin-left: 20px;
+}
+
+.main .FGbttons span
+{
+    vertical-align: middle;
+    margin-left: 7px;   
+}
+

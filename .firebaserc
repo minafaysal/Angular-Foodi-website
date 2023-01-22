@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "restaurant-project-cc735": {
+      "hosting": {
+        "restorant-angular": [
+          "restaurant-project-cc735"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "restaurant-project-cc735"
+  }
+}

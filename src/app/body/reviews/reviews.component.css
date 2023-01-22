@@ -1,0 +1,84 @@
+.Review{
+    text-align: center;
+    background-color: rgb(230, 217, 217);
+}
+#Rtitle{
+    font-size: 45px;
+    font-weight: bolder;
+}
+#Rtitle1{
+    color: rgb(238, 164, 5);
+}
+#Rtext1{
+    font-size: 16px;
+    color: rgb(173, 169, 169);
+    max-width: 44ch;
+    margin-inline: auto;
+
+}
+
+.card{
+    margin-left: 100px;
+}
+.testi-card {
+    background-color:white;
+    padding: 40px;
+    text-align: left;
+    box-shadow: var(--shadow-2);
+    width: 360px;
+    display: inline-block;
+
+
+  }
+  
+  .testi-card .profile-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .testi-card .avatar {
+    min-width: max-content;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+.checked{
+    padding: 1px;
+    color: rgb(238, 164, 5);
+}
+.reviwtext{
+    color:gray;
+    font-weight: 500;
+}
+.reviewname{
+    font-weight: bold;
+}
+.reviewtitle{
+    font-weight:500;
+    color: rgb(167, 161, 161);
+    font-size: 14px;
+}
+.has-scrollbar {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: inline mandatory;
+    padding-block-end: 40px;
+
+    
+  }
+  ::-webkit-scrollbar {
+    height: 11px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 50px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: orange;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-button { width: 230px }
+

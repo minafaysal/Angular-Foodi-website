@@ -1,0 +1,48 @@
+.dropdown{
+   /* padding: 10px; */
+   min-width: 75px;
+    max-width: 250px;
+    background-color: aquamarine;
+}
+
+.addAddContent{
+    max-width: 600px;
+    justify-content: center;
+}
+
+.buildNum,.floor,.flatNum,.streetName{
+    min-width: 75px;
+    max-width: 250px;
+    margin: 5px;
+}
+
+.addressType{
+    /* display: -webkit-inline-box; */
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.dropdownDiv{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+
+}
+
+.radioDiv{
+    width: 50%;
+    justify-content: space-evenly;
+}
+.bigRadioDiv{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inputDiv{
+    display: flex!important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

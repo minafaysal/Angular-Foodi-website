@@ -1,0 +1,100 @@
+.footer {
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer-body{
+    min-height: 450px;
+        padding-block: 120px;
+    background: url("../../assets/images/footer-illustration.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    border-block-end: 2px solid var(--independence_30);
+    background-position: bottom;
+}
+
+.social-list {
+    display: flex;
+    gap: 5px;
+  }
+
+  .social-link {
+    background-color: var(--dark-orange);
+    color: var(--white);
+    font-size: 1.5rem;
+    padding: 10px;
+    transition: var(--transition-1);
+  }
+  
+  .social-link:is(:hover, :focus) { background-color: var(--rich-black-fogra-29); }
+  
+  .footer-list-title {
+    position: relative;
+    max-width: max-content;
+    color: var(--rich-black-fogra-29);
+    font-family: var(--ff-rubik);
+    font-size: var(--fs-5);
+    font-weight: var(--fw-600);
+    letter-spacing: -1px;
+    margin-block-end: 20px;
+  }
+
+  .footer-list-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% + 15px);
+    background-color: var(--deep-saffron);
+    width: 40px;
+    height: 4px;
+    border-inline-end: 5px solid var(--deep-saffron);
+    box-shadow: inset -5px 0 0 var(--white);
+  }
+
+  ul{
+      list-style-type: none;
+  }
+
+  .footer-brand{
+    text-decoration: none;
+  }
+  
+.brand,.brandDot{
+    font-weight: bold;
+    display: inline;    
+    }
+    
+    .brandDot{
+      color:  var(--tangerine);
+    }
+
+.footer-form{
+  background-color: var(--white);
+  padding: 30px;
+  border: 1px solid var(--cultured);
+  box-shadow: var(--shadow-2);;
+}
+.footer-form .btn {
+  font-size: var(--fs-15);
+  --height: 40px;
+  --padding-inline: 25px;
+  background-color: var(--tangerine);
+  color: var(--white);
+}
+
+.footer-form .btn:is(:hover, :focus) { 
+  color: var(--white);
+  background-color: var(--rich-black-fogra-29); 
+}
+.footer-body::after {
+  content: url("../../assets/images/delivery-boy.svg");
+  position: absolute;
+  width: 160px;
+  animation: running-cycle 20s linear infinite;
+}
+@keyframes running-cycle {
+  0% { left: -160px }
+  100% { left: 90%; }
+}

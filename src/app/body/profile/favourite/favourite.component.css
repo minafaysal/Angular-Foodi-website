@@ -1,0 +1,32 @@
+.title{
+    font-weight: bold;
+    padding-bottom: 20px;
+  }
+  .imagdiv{
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .heart{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+  }
+  .title1{
+    font-weight: bold;
+    font-size: 40;
+  }
+.item{
+    height: 170px;
+
+}
+.btn{
+    margin-top: 120px;
+    background-color: green;
+    width: 100px;
+    height: 30px;
+    padding: 0 0 0 0;
+}
+.empty{
+  text-align: center;
+}

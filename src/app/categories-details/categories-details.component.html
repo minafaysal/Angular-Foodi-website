@@ -1,0 +1,108 @@
+
+<section class="section food-menu" id="food-menu">
+    <div class="container">
+
+        <p class="section-subtitle">Popular Dishes</p>
+
+        <h2 class="h2 section-title">
+            Our Delicious <span class="span">Foods</span>
+        </h2>
+
+        <p class="section-text">
+            Food is any substance consumed to provide nutritional support for an organism.
+        </p>
+
+   
+
+        <div class="input-group mb-3">
+            <input type="text" #query (keyup)="filter(query.value)" class="form-control" 
+            placeholder="Find Your Next Meal" aria-label="Find Your Next Meal" >
+            <button class="btn btn-outline-secondary" type="button"   (click)="filter(query.value)"  >Search</button>
+          </div>
+          
+
+
+        <ul class="food-menu-list row d-flex">
+            <div class="col-lg-4 col-md-6 list-item" *ngFor="let item of  filteredProduct;let index=index;" 
+            #foodItem (click)="showBootstrapModal(item) ">
+                <div class="food-menu-card" >
+
+                    <div class="card-banner" >
+                        <img src="/assets/images/promo-2.png" width="300" height="300" loading="lazy"
+                            alt="Fried Chicken Unlimited" class="w-100">
+
+                        <div class="bdge">-{{item.discount}}%</div>
+
+                        <button class="bttn food-menu-btn" (click)="$event.stopPropagation(); "
+                        (click)=" addToCart({item:item,quantity:amount})">Order Now</button>
+                        
+                    </div>
+
+                    <div class="wrapper">
+                        <p class="category">{{item.category}}</p>
+
+                        <div class="rating-wrapper">
+                            <i class="fa fa-star" *ngFor="let v of [].constructor(item.rate)"></i>
+                        </div>
+                    </div>
+
+                    <h3 class="h3 card-title">{{item.iName}}</h3>
+
+                    <div class="price-wrapper">
+
+                        <p class="price-text">Price:</p>
+
+                        <data class="price">${{calaPriceADiscount(item.iPrice,item.discount)}}</data>
+
+                        <del class="del" value="69.00">${{item.iPrice}}</del>
+
+                    </div>
+                </div>
+            </div>
+        </ul> 
+    </div>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" 
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{foodItem.iName}}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body row">
+                    <div class="col-lg-6 col-sm-6">
+                        <img src="/assets/images/promo-2.png" loading="lazy"
+                            alt="Fried Chicken Unlimited" class="w-100">
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <p><b>Category:</b> {{foodItem.category}}</p>
+                        <p><b>Description:</b> {{foodItem.description}}</p>
+
+                        <div class="input-group quantity" style="width: 100px;">
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-primary btn-minus" 
+                                 (click)="minsAmount(amount)">
+                                <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                            <input type="text" [(ngModel)]="amount" class="form-control form-control-sm border-1 text-center" value="1" min="1">
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-primary btn-plus"  (click)="addAmount(amount)">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary w-100" (click)=" addToCart({item:foodItem,quantity:amount})">
+                        Add
+                        <span class="price">${{calaPriceADiscount(foodItem.iPrice,foodItem.discount)}}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>

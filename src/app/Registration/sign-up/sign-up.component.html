@@ -1,0 +1,33 @@
+<div class="main">
+    <form class="w-100" #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="mb-3">
+            <input type="text" class="form-control" ngModel name="firstName" placeholder="First Name*">
+        </div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" ngModel name="lastName" placeholder="Last Name*">
+        </div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" ngModel name="mobileNumber" placeholder="Mobile Number*">
+        </div>
+        
+        <div class="mb-3">
+            <input type="email" class="form-control" ngModel name="email" placeholder="Email*">
+        </div>
+    
+        <div class="mb-3 password">
+            <i class="fa-solid fa-eye" *ngIf="passwordState == 'text'" (click)="changePassState()"></i>
+            <i class="fa-solid fa-eye-slash" *ngIf="passwordState == 'password'" (click)="changePassState()"></i>
+            <input [type]="passwordState" placeholder="Password*" ngModel name="password" class="form-control">
+        </div>
+
+        <div class="mb-3 password">
+            <i class="fa-solid fa-eye" *ngIf="cPasswordState == 'text'" (click)="changeCPassState()"></i>
+            <i class="fa-solid fa-eye-slash" *ngIf="cPasswordState == 'password'" (click)="changeCPassState()"></i>
+            <input [type]="cPasswordState" placeholder="Confirm Password*" ngModel name="cPassword" class="form-control">
+        </div>
+    
+        <button type="submit" name="submit"  class="btn btn-warning mx-auto d-block submitBtn">CREATE</button>
+    </form>
+</div>

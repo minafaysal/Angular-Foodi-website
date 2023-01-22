@@ -1,0 +1,121 @@
+<div class="footer text-center text-lg-start text-muted">
+
+  <!-- Section: Links  -->
+  <section class="footer-body ">
+    <div class=" container  text-center text-md-start mt-0">
+      <!-- Grid row -->
+      <div class="row mt-0">
+        <!-- Grid column -->
+        <div class="footer-brand col-sm-12 col-md-6 col-lg-3 col-xl-3 mx-auto mb-4 mt-4">
+          <!-- Content -->
+          <a href="#" class="footer-brand">
+            <h2 class="brand text-dark">Foodie</h2>
+            <h2 class="brandDot">.</h2>
+          </a>
+
+          <p class="footer-text">
+            Financial experts support or help you to to find out which way you can raise your funds more.
+          </p>
+
+          <ul class="social-list">
+            <li>
+              <a href="#" class="social-link">
+                <span class="fa fa-facebook"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <span class="fa fa-twitter"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <span class="fa fa-instagram"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <span class="fa fa-pinterest"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mx-auto mb-4 mt-4">
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Contact Info</p>
+            </li>
+            <li>
+              <p class="footer-list-item">+1 (062) 109-9222</p>
+            </li>
+            <li>
+              <p class="footer-list-item">Info@YourGmail24.com</p>
+            </li>
+            <li>
+              <address class="footer-list-item">153 Williamson Plaza, Maggieberg, MT 09514</address>
+            </li>
+
+          </ul>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mx-auto mb-4 mt-4">
+          <!-- Links -->
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Opening Hours</p>
+            </li>
+            <li>
+              <p class="footer-list-item">Monday-Friday: 08:00-22:00</p>
+            </li>
+            <li>
+              <p class="footer-list-item">Tuesday 4PM: Till Mid Night</p>
+            </li>
+            <li>
+              <p class="footer-list-item">Saturday: 10:00-16:00</p>
+            </li>
+          </ul>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mx-auto mb-md-4 mt-0 ">
+          <!-- Links -->
+          <form class="footer-form" [formGroup]="bookingForm">
+            <p class="footer-list-title">Book a Table</p>
+            <div class="d-flex flex-row mb-1">
+              <input type="text" formControlName="full_name" placeholder="Your Name" aria-label="Your Name" class="form-control lm-5">
+              <input type="email" formControlName="email"  placeholder="Email" aria-label="Email" class="form-control ms-1">
+            </div>
+            <div class="d-flex flex-row mb-1">
+                <select formControlName="persons_count"  aria-label="Total person" class="form-control" >
+                <option value='person'>Person</option>
+                <option value="2 person">2 Person</option>
+                <option value="3 person">3 Person</option>
+                <option value="4 person">4 Person</option>
+                <option value="5 person">5 Person</option>
+              </select>
+              <input type="date" formControlName="date" aria-label="Reservation date" class="form-control ms-1">
+            </div>
+              <textarea formControlName="message" placeholder="Message" aria-label="Message" class="form-control mb-1"></textarea>
+            <input type="submit" class="btn" value="Book a Table" >
+          </form>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2022 Copyright:
+    <a class="text-reset fw-bold" href="https://www.iti.gov.eg/iti/home">ITI</a>
+  </div>
+  <!-- Copyright -->
+</div>

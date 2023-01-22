@@ -1,0 +1,32 @@
+<div >
+
+    <div *ngIf="allAddress.length==0" class="fw-bold  text-secondary align-items-center text-center emptyAdd">
+        <div><i class="fa fa-location-dot fa-5x noAddIcon"></i>
+            <p class="fs-3">No address found </p>
+            <p class="fs-6">Please enter your address</p></div>
+
+
+    </div>
+
+    <div *ngIf="allAddress.length!=0">
+        <p class="fw-bold">Address List</p>
+        <div *ngFor="let addr of allAddress " let i=index>
+            <p class="my-title">{{addr.title}}</p>
+            <div class="d-flex justify-content-between">
+                <div class="align-self-center text-secondary input">
+                    <input #inputId [readonly]="input_disabled" class="form-control addInput" type="text"
+                        placeholder="address" value={{addr.address}} aria-label="addr.address">
+                </div>
+                <div>
+                    <a class="text-secondary btn fw-bold" (click)="remove(addr.title)">
+                        <i class="fa fa-trash"></i>&nbsp;
+                        Delete</a>
+                    <a class="text-success btn fw-bold" (click)="edit(inputId)">
+                        <i class="fa fa-pencil"></i>&nbsp;
+                        Edit</a>
+                </div>
+            </div>
+            <hr width="100%">
+        </div>
+    </div>
+</div>

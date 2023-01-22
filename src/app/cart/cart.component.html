@@ -1,0 +1,123 @@
+
+<div class="wrapper justify-content-between  mainContainer" >
+    <div class="row wrapper justify-content-between m-20  ">
+
+        <div class=" col-lg-8 col-md-8 col-sm-10 leftColumn " >
+            <div class="row">
+                <h5 class=" col-lg-6"> <strong> MY CART ( <span>{{cartProducts.length}}
+                        </span>
+                        ITEMS )</strong></h5>
+                <h5 class=" col-lg-6 text-danger bold text-end pointer " routerLink="">+ ADD MORE ITEMS</h5>
+            </div>
+
+
+            <div id="details" class=" row bg-white rounded Order justify-content-between" 
+                *ngFor="let product of cartProducts; let index = index">
+                <div class=" col-lg-2 d-none d-lg-block " >
+                    <img src="{{product.item.iPic}}"   alt="orderImg" class="orderImg">
+                </div>
+                <div class=" col-lg-6 col-md-8 col-sm-8 ">
+                    <ul class="">
+                        <li>{{product.item.iName}}</li>
+                        <li> {{product.item.description}}</li>
+                        <li> <button class="btn btn-success"   (click)="showComment=true">Customize </button></li>
+                
+                        <li *ngIf="showComment"> <div class="form-group mb-3">
+                            
+                            <input  type="text" class="form-control" #commentInput
+                                 aria-describedby="basic-addon1">
+                        </div>
+                        <button type="submit" class="btn btn-light" style="width:100%"   (click)=" showComment=false ; addToCart({item: product,quantity:product.quantity,comment:commentInput.value})">Submit</button></li>
+                       
+
+                    </ul>
+                </div>
+
+                <div class=" col-lg-3 col-md-12 col-sm-12 ">
+                    <div style="margin-top: 20px; ">
+
+                        <strong>Item Price :</strong> EGP {{product.item.iPrice}}
+                    </div>
+                    <div style="margin-top: 20px; ">
+
+                       <strong> Total Price </strong>: EGP ({{product.item.iPrice*product.quantity}})
+                    </div>
+                    <div class="d-flex  col-lg-3 col-md-12 col-sm-12 inputControls "
+                       >
+                        <button class="btn btn-light  text-white bg-success " (click)="addAmount(index)">+</button>
+                        <input class="btn btn-light btn-sm " value="1" min="1" style="max-width:80px"
+                            (change)="detectChange()" [(ngModel)]="product.quantity">
+
+                        <button class="btn btn-success" (click)="minsAmount(index)">-</button>
+                    </div>
+                    <div   style=" width: max-content;margin-top: 15px; ">
+                   <button class="btn btn-light  text-white bg-danger " style="width:150px ;" (click)="deleteProduct(index)"><i
+                            class="fa-solid fa-trash-can"></i></button>
+
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- second column -->
+        <div class="col-lg-4  col-md-8 col-sm-10 rightColumn " style="border-radius:15px ;padding:15px">
+            <div id="cart" class="bg-white rounded Voucher" >
+                <div class="d-flex justify-content-between ">
+                    <div class="h5"> <i class="fa-solid fa-receipt"></i> &nbsp; Have Voucher Code ?</div>
+                </div>
+                <div class="my-3 d-flex  justify-content-between">
+                    <input type="text" class="w-100 text-center" placeholder="Gift Card or Promo Card" width="70%">
+                    &nbsp;
+                    <button class="btn btn-light">Apply</button>
+                </div>
+            </div>
+
+
+
+
+
+            <div id="cart" class="bg-white rounded pricing">
+                <div class=" justify-content-between ">
+                    <div class="h5 "> Price Details</div>
+
+
+                    <div class="row mt-3">
+                        <div class=" col-lg-5  col-md-5  col-sm-5 ">
+                            <div>Sub Total</div>
+                            <div style="font-size:smaller">Delivery Service Costs</div>
+                            <div style="margin-top: 20px ;border-top: 2px  solid  rgb(211, 206, 206);">TOTAL</div>
+                        </div>
+                        <div class=" col-lg-7  col-md-7  col-sm-7 " style="text-align: end;">
+                            <div>EGP {{subTotal}}</div>
+                            <div>EGP 50</div>
+                            <div style="margin-top: 20px ">EGP {{subTotal+50}}</div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            
+            <div class="row col-lg-12 checkout " #next>
+
+                <button class=" text-white text-center  btn btn-success " routerLink="/checkout"  style="width:100%"
+                    > Check Out
+                    
+                </button>
+            </div>
+
+
+            
+            <div class="row col-lg-12 deleteProduct " >
+                <button class=" text-white text-center  btn btn-danger " style="width:100%"   (click)="clearCart()" >Delete All Product</button>
+            </div>
+        </div>
+ <!-- (click)=" addCart()" -->
+
+
+
+

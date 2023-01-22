@@ -1,0 +1,299 @@
+<div class="wrapper fullPage">
+
+
+    <div class="row wrapper m-20 d-flex ">
+        <div class="col-lg-8 col-md-8 col-sm-8  ">
+            <div class="leftColumn">
+
+
+                <div id="details" class=" row bg-white rounded d-flex justify-content-start progressDiv ">
+
+                    <div class="numberCircle col-lg-2 col-md-2 col-sm-1  col-xs-4 ">1</div>
+                    <label class="col-lg-2 col-md-3 col-sm-3  col-xs-4" style="margin-top: 5px;"> Location </label>
+                    <span class="col-lg-3 col-md-5 col-sm-7 col-xs-7">
+                        <div class="progress" style="height: 6px; width:150px;margin-top: 15px;">
+                            <div class="progress-bar1 w-50" style=" background-color: green;" #progressBar1></div>
+                        </div>
+                    </span>
+
+                    <div class="numberCircle  col-lg-2 col-md-1 col-sm-1  col-xs-4">2</div>
+                    <label class="col-lg-1 col-md-3 col-sm-3  col-xs-4" style="margin-top: 5px;"> Details </label>
+                    <span class="col-lg-3 col-md-5 col-sm-7 col-xs-7">
+                        <div class="progress" style="height: 6px; width:150px;margin-top: 15px;">
+                            <div class="progress-bar2 w-0" style=" background-color: green;" #progressBar2></div>
+                        </div>
+                    </span>
+
+
+                    <div class="numberCircle col-lg-1 col-md-1 col-sm-1  col-xs-4">3</div>
+                    <label class="col-lg-1 col-md-3 col-sm-3  col-xs-4" style="margin-top: 5px;"> Payment </label>
+                </div>
+
+                <div #location>
+
+
+                    <div class="row " style="margin-top: 15px;">
+                        <h5> <i class="fa-solid fa-angles-left"></i> Locaton Select</h5>
+
+                    </div>
+                    <div id="details" class="  d-block row bg-white rounded  location"
+                        style="padding: 20px;margin-top: 10px;">
+
+
+                        <div class="row location-d1">
+                            <div class="row mb-3">
+                                <h5> How Would You Like Your Order?</h5>
+
+                            </div>
+
+
+                            <form [formGroup]="registerationForm">
+                                <!-- {{registerationForm.value|json}} -->
+
+                                <div class=" form-control  col-lg-4 col-md-12 col-sm-6 col-xs-6 pretty p-default p-curve d-flex"
+                                    style=" margin-bottom: 25px;">
+                                    <input type="radio" formControlName="orderType" name="color" value=" Delivery" />
+                                    <div class="state p-success-o  "> &nbsp;
+                                        <label> Delivery</label>
+                                    </div>
+
+                                </div>
+
+                                <div class=" form-control  col-lg-4 col-md-12 col-sm-6 col-xs-6 pretty p-default p-curve d-flex"
+                                    style=" margin-bottom: 25px;">
+                                    <input type="radio" formControlName="orderType" name="color" value=" Pick Up" />
+                                    <div class="state p-success-o  "> &nbsp;
+                                        <label> Pick Up</label>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group mb-3 location-d2">
+                                    <h5>Add your address</h5>
+                                    <input formControlName="address" type="text" class="form-control"
+                                        aria-describedby="basic-addon1" style="height: 70px;">
+                                </div>
+                                <h5> When Do You Want Your Order? </h5>
+
+                                <div class=" form-control  col-lg-4 col-md-12 col-sm-6 col-xs-6 pretty p-default p-curve d-flex"
+                                    style=" margin-bottom: 25px;">
+                                    <input type="radio" formControlName="orderDate" name="color" value="ASAP" />
+                                    <div class="state p-success-o  "> &nbsp;
+                                        <label>ASAP</label>
+                                    </div>
+
+                                </div>
+                                <div class=" form-control  col-lg-4 col-md-12 col-sm-6 col-xs-6 pretty p-default p-curve d-flex"
+                                    style=" margin-bottom: 25px;">
+                                    <input type="radio" formControlName="orderDate" name="color" value="Future" />
+                                    <div class="state p-success-o  "> &nbsp;
+                                        <label>Future</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-success" style="width:100%"
+                            (click)="submiteCheckoutDetails()">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="   d-none   justify-content-between details" #details>
+
+                <div class="row">
+                    <h5> <i class="fa-solid fa-angles-left"></i> Fill Details</h5>
+
+                </div>
+
+
+                <div id="details" class=" row bg-white rounded d-flex justify-content-start ">
+
+                    <div class="row mb-3">
+                        <h5> Basic Details </h5>
+
+                    </div>
+                    <form [formGroup]="registerationForm">
+
+
+                        <div class="form-group mb-3">
+                            <label>First Name :</label>
+                            <input [class.is-invalid]="firstName?.invalid && firstName?.touched"
+                                formControlName="firstName" type="text" class="form-control"
+                                aria-describedby="basic-addon1">
+                            <div *ngIf="firstName?.invalid && firstName?.touched">
+
+                                <small class="text-danger" *ngIf="firstName?.errors?.['required']">First Name is
+                                    Required</small>
+
+                                <small class="text-danger" *ngIf="firstName?.errors?.['pattern']">First Name Length must
+                                    be not less than 3 character</small>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group mb-3">
+                            <label>Last Name :</label>
+                            <input [class.is-invalid]="lastName?.invalid && lastName?.touched"
+                                formControlName="lastName" type="text" class="form-control"
+                                aria-describedby="basic-addon1">
+                            <div *ngIf="lastName?.invalid && lastName?.touched">
+
+                                <small class="text-danger" *ngIf="lastName?.errors?.['required']">Last Name is
+                                    Required</small>
+                                <small class="text-danger" *ngIf="lastName?.errors?.['pattern']">Last Name Length must
+                                    be 3 character</small>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group mb-3 ">
+                            <label>PhoneNumber :</label>
+                            <input [class.is-invalid]="phoneNumber?.invalid && phoneNumber?.touched"
+                                formControlName="phoneNumber" type="number" class="form-control"
+                                aria-describedby="basic-addon1">
+                            <div *ngIf="phoneNumber?.invalid && phoneNumber?.touched">
+
+                                <small class="text-danger" *ngIf="phoneNumber?.errors?.['required']">Phone Number is
+                                    Required</small>
+                                <small class="text-danger" *ngIf="phoneNumber?.errors?.['pattern']">Phone Number Length
+                                    must be 11 character</small>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group mb-3">
+                            <label>Email:</label>
+                            <input [class.is-invalid]="email?.invalid && email?.touched" formControlName="email"
+                                type="text" class="form-control" aria-describedby="basic-addon1">
+                            <div *ngIf="email?.invalid && email?.touched">
+
+                                <small class="text-danger" *ngIf="email?.errors?.['required']">Email is Required</small>
+                                <small class="text-danger" *ngIf="email?.errors?.['pattern']">Email must have similer
+                                    expresion @example.com </small>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label>Delivery Instructions:</label>
+                            <input formControlName="deliveryInstructions" type="text" class="form-control"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <button type="submit" class="btn btn-success" style="width:100%"
+                            (click)="submiteCheckoutDetails()">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+            <div class="   d-none  justify-content-between  payment" #payment
+                style="border-radius:15px ; margin-top: 15px;">
+
+                <div class="row mb-3">
+                    <h5> <i class="fa-solid fa-angles-left"></i> Your Payment Information </h5>
+
+                </div>
+
+
+                <div class=" row bg-white rounded d-flex justify-content-start " style="padding: 20px;">
+
+                    <h5 style="margin: bottom 25px ;"> I Want to Pay by: </h5>
+                    <form [formGroup]="registerationForm">
+                        <!-- {{registerationForm.value|json}} -->
+
+                        <div class=" form-control  col-lg-4 col-md-12 col-sm-6 col-xs-6 pretty p-default p-curve d-flex"
+                            style=" margin-bottom: 45px;">
+                            <input type="radio" formControlName="payment" name="color" value=" Cash on Delivery" />
+                            <div class="state p-success-o  "> &nbsp;
+                                <label> Cash on Delivery</label>
+                            </div>
+
+                        </div>
+
+
+                        <div class=" form-control col-lg-6 col-md-12 col-sm-6 col-xs-6 pretty p-default p-curve d-flex"
+                            style=" margin-bottom: 45px;">
+                            <input type="radio" formControlName="payment" name="color" value="Pay Online " />
+                            <div class="state p-success-o  "> &nbsp;
+                                <label> Pay Online (still not avilable)</label>
+                            </div>
+                        </div>
+
+
+
+
+                        
+                        <button type="submit" class="btn btn-success" style="width:100%"
+                            (click)="submiteCheckoutDetails()">Submit</button>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- second part -->
+        <div class="col-lg-4  col-md-8 col-sm-10  rightColumn">
+            <div id="cart" class="bg-white rounded Summary">
+                <div class="d-flex justify-content-between ">
+                    <div class="h5"> Order Summary</div>
+                </div>
+                <div class="summary-d1 ">
+
+                    <div class="row " style="margin-bottom:10px">
+
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            Your Cart Have
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5">
+                            ( {{cartProducts.length}} Items )
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3" style="text-align:end">
+                            EGP {{subTotal}}
+                        </div>
+                    </div>
+
+                </div>
+                <div class=" justify-content-between ">
+                    <div class="h5 " style="margin-top: 20px"> Price Details </div>
+
+
+                    <div class="row mt-3">
+                        <div class=" col-lg-5  col-md-5  col-sm-5 ">
+                            <div>Sub Total</div>
+                            <div style="font-size:smaller">Delivery Service Costs</div>
+                            <div style=" margin-top: 20px ;border-top: 2px  solid  rgb(211, 206, 206);">TOTAL</div>
+                        </div>
+                        <div class=" col-lg-7  col-md-7  col-sm-7 " style="text-align: end;">
+                            <div>EGP {{subTotal}}</div>
+                            <div>50</div>
+                            <div style="margin-top: 20px ">EGP {{subTotal+50}}</div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="row col-lg-12  nextButton" *ngIf="visable">
+
+                <button class=" text-white text-center  btn btn-success " style="width:100%"
+                    (click)="hide(location,details,payment ,progressBar1,progressBar2)">Next
+                </button>
+            </div>
+
+
+
+            <div class="row col-lg-12  submiteButton ">
+                <button class=" text-white text-center  btn btn-danger " style="width:100%">Submite</button>
+            </div>
+        </div>

@@ -1,0 +1,47 @@
+.main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* sign in */
+.main form .password
+{
+    position: relative;
+}
+
+.main form .password i
+{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right: 12px;
+    cursor: pointer;
+    color: #8b8686;
+}
+
+.main form .form-check label.forgetPass
+{
+    text-align: right;
+    font-weight: bold;
+}
+
+.main form .submitBtn
+{
+    width: 70%;
+    font-weight: bold;
+    color: white;
+    font-size: 17px;
+    padding: 8px;
+    background-color: var(--tangerine);
+    border: 0;
+    text-shadow: 2px 2px 1px #665757;
+    margin: 25px 0 30px;
+    transition: all .25s ease-in-out;
+}
+
+.main form .submitBtn:hover
+{
+    background-color:hsl(31deg 85% 42%);
+}

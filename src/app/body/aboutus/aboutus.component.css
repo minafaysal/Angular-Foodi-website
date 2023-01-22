@@ -1,0 +1,35 @@
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: 100px;
+
+}
+
+.center {
+    animation: center-animate 1.3s ease-in infinite alternate;
+    transform-origin: center;
+}
+
+
+@keyframes center-animate {
+    0% {
+        transform: scale(1.1)
+    }
+
+    100% {
+        transform: scaleX(1)
+    }
+}
+
+
+
+.img1{height:480px;  width: 550px;
+
+}
+.img2{ position:absolute;height:215px;  width:210px;
+
+}
+.orange{color:  orange;
+
+}

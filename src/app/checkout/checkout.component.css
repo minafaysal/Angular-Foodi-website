@@ -1,0 +1,73 @@
+
+*{
+   
+    box-sizing: border-box;
+}
+
+.wrapper{
+    padding: 10px 50px ;
+}
+.numberCircle {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+
+    background: rgb(223, 221, 221);
+    border: 2px solid green;
+    color: #666;
+    text-align: center;
+
+    font: 20px Arial, sans-serif;
+}
+
+.fullPage{background-color:rgb(231, 231, 231) ;height:100vh
+
+}
+.leftColumn{
+    border-radius:15px
+
+}
+.progressDiv{padding: 20px;
+
+}
+
+.progress{height: 6px; width:150px;margin-top: 15px;
+
+}
+.location{padding: 20px;margin-top: 10px;
+
+}
+.location-d1{border-bottom: 2px  solid  rgb(211, 206, 206);
+
+}
+.location-d2{border-bottom: 2px  solid  rgb(211, 206, 206);
+
+}
+.location-d3{padding: 20px;margin-top: 8px;
+
+}
+.details{border-radius:15px  ;margin-top: 15px;
+
+}
+#details{padding: 20px;margin-top: 10px;
+
+}
+.payment{border-radius:15px ; margin-top: 15px;
+
+}
+.rightColumn{border-radius:15px ;padding:15px
+
+}
+.Summary{border-radius:15px ;padding:20px
+
+}
+.summary-d1{border-bottom: 2px  solid  rgb(211, 206, 206);
+
+}
+.nextButton{margin-top: 20px; margin-left: 3px;
+
+}
+.submiteButton{margin-top: 20px; margin-left: 3px;
+
+}

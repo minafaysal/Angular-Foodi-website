@@ -1,0 +1,63 @@
+<div>
+    <div class="addAddContent">
+        <div class="dropdownDiv">
+            <div class="dropdown">
+                <button class="btn text-secondary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Select city
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#">Mansoura</a></li>
+                    <li><a class="dropdown-item" href="#">Alexandria</a></li>
+                    <li><a class="dropdown-item" href="#">Cairo</a></li>
+                    <li><a class="dropdown-item" href="#">Assiut</a></li>
+
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn text-secondary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Select area
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                </ul>
+            </div>
+        </div>
+        <div class="bigRadioDiv ">
+            Select address type
+            <div class="d-flex radioDiv">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Home
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Work
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Other
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="inputDiv">
+            <input #inputId class="form-control buildNum" type="text" placeholder="Building Number"
+                aria-label="addr.address">
+
+            <input #inputId class="form-control floor" type="text" placeholder="Floor">
+
+            <input #inputId class="form-control flatNum" type="text" placeholder="Flat Number"
+                aria-label="addr.address">
+
+            <input #inputId class="form-control streetName" type="text" placeholder="Streer Number"
+                aria-label="addr.address">
+        </div>
+    </div>
+
+</div>

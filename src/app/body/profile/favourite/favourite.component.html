@@ -1,0 +1,28 @@
+<div class='title'>Favorites List</div>
+<div *ngIf="newproduct.length==0 then thenBlock; else elseblock">
+
+</div>
+<ng-template #thenBlock>
+<div class="empty">
+    <i class="fa fa-heart" style="font-size:100px;color: rgb(211, 209, 209)"></i>
+    <h5>No Items</h5>
+</div>
+</ng-template >
+<ng-template #elseblock>
+<div class="row item" *ngFor="let product of newproduct">
+    <div class="col imagdiv">
+        <img class="img" src="{{product.pic}}" alt="" width="150" height="150">
+        <i class="fa fa-heart heart" style="font-size:20px;color:red" (click)="deleteproduct(product.id)"></i>
+    </div>
+    <div class="col-7 d-none d-xl-block">
+        <p class="title1">{{ product.name }}</p>
+        <p class="d-none d-xl-block scale-up-anim">{{ product.description }}</p>
+    </div>
+    <div class="col-2  d-none d-xl-block">
+        <footer>
+            <button type="button" class="btn btn-success">ADD</button>
+        </footer>
+    </div>  
+</div>
+</ng-template>
+

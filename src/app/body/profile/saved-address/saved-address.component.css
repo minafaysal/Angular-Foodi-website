@@ -1,0 +1,16 @@
+.my-title{
+    display: contents;
+    font-weight: bold;
+}
+
+.addInput{
+    border: 0px !important;
+}
+
+.emptyAdd{
+    /* height: 30em; */
+    /* height: 100%; */
+    /* background-color: bisque; */
+    justify-content: center;
+    display: flex;
+}

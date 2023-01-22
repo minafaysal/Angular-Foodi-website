@@ -1,0 +1,127 @@
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3 ">
+    <div class="container">
+        <a href="#" class="navbar-brand">
+            <h3 class="brand ">Foodie</h3>
+            <h3 class="brandDot">.</h3>
+        </a>
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" id="nav-btn"></i>
+          </button>
+
+          <li class="nav-item dropdown profileDDL">
+            <a class="nav-link fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
+            <ul class="dropdown-menu">
+                <li><span class="dropdown-item" *ngIf="!userToken" (click)="openModal(0)">Login</span></li>
+                <li><span class="dropdown-item" *ngIf="!userToken" (click)="openModal(1)">SignUp</span></li>
+                <li><span class="dropdown-item" *ngIf="userToken"  routerLink="/profile" >Profile</span></li>
+                <li><span class="dropdown-item" *ngIf="userToken" (click)="logOut()">logOut</span></li>
+            </ul>
+        </li> -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="mx-auto"></div>
+            <li class="nav-item  " > 
+
+                <div class="dropdown ">
+                    
+                        <i class="fa-solid fa-cart-shopping nav-link fw-bold"  data-bs-toggle="dropdown"
+                         data-bs-auto-close="false" style="font-size:22px"></i> 
+                 
+                           <ul class="dropdown-menu  dropdown-menu-left" >
+                        <li style="background-color: hsl(31, 84%, 50%);height:35px; margin-top: 2px;">
+                            <h4 style=" margin-left: 10px;">  Mini Cart</h4>
+                        </li>
+                                <li>
+                            <div class="cartBox" >
+        
+                                <table class="table table-striped" >
+        
+                                    <tbody >
+                                         <tr *ngFor="let item of cartProducts; let index = index" > 
+                                        
+                                             <td><i class="fa-solid fa-circle-minus text-danger" (click)="deleteProduct(index)"  ></i></td>
+                                             <td> <img src="{{item.item.iPic}}"   alt="orderImg" class="dropdownimg"></td>
+                                             <td style="  text-align: lift;">{{item.item.iName}}</td>
+                                            <td>EGP {{item.item.iPrice}}</td> 
+                                            <td class=" d-flex " >
+                                                     <button class="btn btn-success btn-sm" (click)="addAmount(index)">+</button>
+                                                    <input class="form-control"  (change)="detectChange()"
+                                                    type="number" min="1" 
+                                                        style="max-width:80px;height:35px ;" [(ngModel)]="item.quantity">
+                                                    <button class="btn btn-success  btn-sm" (click)="minsAmount(index)">-</button> 
+                                           </td>
+                                         </tr> 
+                             
+                                    </tbody>  
+                                </table>
+                             </div>
+                        </li>
+                       <li style="margin:10px ;"><span style="color:hsl(31, 84%, 50%);font-weight: bold;">Total : </span>EGP {{subTotal}}</li>
+                        <li style="margin:10px ;"> <span style="color:hsl(31, 84%, 50%);font-weight: bold;">Delivery Service Costs :</span> EGP 50 </li>
+                        <li style="margin:10px ;border-bottom: 2px  solid  rgb(211, 206, 206);" ><span style="color:hsl(31, 84%, 50%);font-weight: bold;">Total Price </span>:EGP {{subTotal+50}}</li>               
+                        <li>
+                            <button class="btn btn-success m-2" routerLink="/cart"  style=" width :450px;">Go to Cart</button>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown profileDDL">
+                    <a class="nav-link fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><span class="dropdown-item" *ngIf="!userToken" (click)="openModal(0)">Login</span></li>
+                        <li><span class="dropdown-item" *ngIf="!userToken" (click)="openModal(1)">SignUp</span></li>
+                        <li><span class="dropdown-item" *ngIf="userToken"  routerLink="/profile" >Profile</span></li>
+                        <li><span class="dropdown-item" *ngIf="userToken" (click)="logOut()">logOut</span></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" routerLink="/cart" >Cart</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">Contact us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="row">
+            <div class="hero-content col-md-6">
+                <p class="hero-subtitle">Eat Sleep And</p>
+                <p class="fw-bold hero-title">Supper delicious Burger in town!<p>
+                <p class="hero-text">Food is any substance consumed to provide nutritional support for an organism.</p>
+                <button class="btn">Book A Table</button>
+            </div>
+            <div class="col-md-6 d-none d-md-inline-block">
+                <img src="../../assets/images/hero-banner.png" loading="lazy" alt="Burger" class="header-sandwitch w-100">
+            </div>
+        </div>
+    </div>
+</section>
+

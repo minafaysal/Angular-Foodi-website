@@ -1,0 +1,27 @@
+<div class="main">
+    <form class="w-100" #form="ngForm" (ngSubmit)="onSubmit(form)" >
+        <div class="mb-3 inputF email">
+            <input type="email" class="form-control" id="exampleInputEmail1" ngModel name="email" placeholder="Email" aria-describedby="emailHelp">
+        </div>
+    
+        <div class="mb-3 inputF password">
+            <i class="fa-solid fa-eye" *ngIf="passwordState == 'text'" (click)="changePassState()"></i>
+            <i class="fa-solid fa-eye-slash" *ngIf="passwordState == 'password'" (click)="changePassState()"></i>
+            <input [type]="passwordState" placeholder="Password" ngModel name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+    
+        <div class="mb-3 form-check d-flex">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label for="exampleCheck1" class="ms-2">Remember me</label>
+            <label class="forgetPass ms-auto d-xs-block" >Forget Password?</label>
+        </div>
+        <button type="submit" class="btn btn-warning mx-auto d-block submitBtn">SIGN IN</button>
+    </form>
+    
+    <p>or Connect with</p>
+    
+    <div class="FGbttons d-flex">
+        <button class="btn"><img src="https://img.icons8.com/fluency/30/null/facebook.png"/><span>FACEBOOK</span></button>
+        <button class="btn"><img src="https://img.icons8.com/color/30/null/google-logo.png"/><span>GOOGLE</span></button>
+    </div>
+</div>
